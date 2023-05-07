@@ -1,0 +1,83 @@
+{
+  "receive": {
+    "ATUAH": {
+      "fields": {
+        "r:deb95dae-24df-4fd0-84f1-ee2104514c22": {
+          "guid": "r:deb95dae-24df-4fd0-84f1-ee2104514c22",
+          "fee_fixed_min": 0.4,
+          "fee_percent_min": 3,
+          "fee_fixed_max": 0.7,
+          "fee_percent_max": 3,
+          "customer_fee_fixed": 1,
+          "customer_fee_percent": 4,
+          "delivery_digits": 2,
+          "asset_digits": 2,
+          "min_amount": 2.08,
+          "max_amount": 31250,
+          "rate": 1,
+          "direction": "out",
+          "label": "",
+          "logo_url": "logo.com",
+          "mobile_logo_url": "mobilelogo.com",
+          "payment_group": "BANKCARD",
+          "payment_group_name": "Bank card",
+          "delivery_currency": "iso4217:UAH",
+          "country_code": "UKR",
+          "customer_kind": "both",
+          "fields": {
+            "external_id": {
+              "optional": true,
+              "description": "Merchant’s external ID",
+              "hidden": true
+            },
+            "purpose": {
+              "description": "Purpose",
+              "weight": 2
+            },
+            "redirect_url": {
+              "optional": true,
+              "description": "url where a customer will be redirected with parameters status=[successful|failed|canceled], transaction_id, method, amount, currency",
+              "hidden": true,
+              "weight": 1
+            },
+            "status_callback_url": {
+              "optional": true,
+              "description": "Callback URL",
+              "hidden": true
+            },
+            "to_bank_card": {
+              "description": "Bank card number",
+              "weight": 1
+            }
+          }
+        },
+        "transaction": {
+          "remit_method": {
+            "description": "Method of remit to make",
+            "choices": [
+              "r:deb95dae-24df-4fd0-84f1-ee2104514c22"
+            ]
+          }
+        }
+      },
+      "sep12": {
+        "sender": {
+          "types": {
+            "individual_sender": {
+              "description": "A sending customer"
+            }
+          }
+        },
+        "receiver": {
+          "types": {
+            "individual_receiver": {
+              "description": "A receiving customer"
+            }
+          }
+        }
+      },
+      "enabled": true,
+      "authentication_required": false
+    }
+  }
+}
